@@ -47,15 +47,34 @@ namespace CapaNegocio
             if (string.IsNullOrEmpty(Mensaje))
             {
 
-                //Voy a mandar la clave por correo más adelante
-                string clave = "test123";
-                // encripto la clave con sha256
-                obj.Clave = CN_Recursos.EncriptarSHA256(clave);// Encripto la clave con SHA256 antes de enviarla a la base de datos
-                return objCdUsuario.Registrar(obj, out Mensaje); // Llamo al método de la capa de datos para registrar el usuario y obtengo el mensaje de error si ocurre
+                // MODIFICO Y AHORA GENERO UNA CLAVE ALEATORIA PARA EL USUARIO
+                string clave = CN_Recursos.GenerarClave();
+
+                string asunto = "Creación de Cuenta"; // Asunto del correo
+                string mensaje = $"<h1>Bienvenido a nuestro sistema</h1><p>Su cuenta ha sido creada exitosamente.</p><p>Su clave de acceso es: <strong>{clave}</strong></p>"; // Cuerpo del correo con la clave generada
+
+                // Envio el correo al usuario con la clave generada
+
+                bool respuesta = CN_Recursos.EnviarCorreo(obj.Correo, asunto, mensaje); // Llamo al método para enviar el correo con la clave generada
+
+                // Verifico si el correo se envió correctamente
+
+                if (respuesta) {
+                    obj.Clave = CN_Recursos.EncriptarSHA256(clave);// Encripto la clave generada con SHA256 antes de guardarla en la base de datos
+                    return objCdUsuario.Registrar(obj, out Mensaje); // Llamo al método de la capa de datos para registrar el usuario 
+                }
+                else
+                {
+                                       Mensaje = "Error al enviar el correo con la clave generada. Por favor, inténtelo de nuevo."; // Mensaje de error si no se pudo enviar el correo
+                    return 0; // Retorno 0 si no se pudo enviar el correo
+                }
+                    
+
+                  
             }
             else {
                 return 0; }// Retorno 0 si hay un mensaje de error, indicando que no se pudo registrar
-                                             // }
+                                             
         }
 
 

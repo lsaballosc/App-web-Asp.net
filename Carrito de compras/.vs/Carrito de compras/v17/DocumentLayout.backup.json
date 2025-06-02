@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3DE1C700-9656-4048-A696-BE6B49770919}|AppWeb\\CapaPresentacionAdmin.csproj|C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\appweb\\views\\home\\usuarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3DE1C700-9656-4048-A696-BE6B49770919}|AppWeb\\CapaPresentacionAdmin.csproj|solutionrelative:appweb\\views\\home\\usuarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A740F537-6EC1-40B7-A3AF-44F66083365D}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\leonel\\onedrive\\documentos\\app asp.net\\carrito de compras\\capanegocio\\cn_usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A740F537-6EC1-40B7-A3AF-44F66083365D}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\cn_usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DE1C700-9656-4048-A696-BE6B49770919}|AppWeb\\CapaPresentacionAdmin.csproj|c:\\users\\leonel\\onedrive\\documentos\\app asp.net\\carrito de compras\\appweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3DE1C700-9656-4048-A696-BE6B49770919}|AppWeb\\CapaPresentacionAdmin.csproj|C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\appweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DE1C700-9656-4048-A696-BE6B49770919}|AppWeb\\CapaPresentacionAdmin.csproj|solutionrelative:appweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A740F537-6EC1-40B7-A3AF-44F66083365D}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\leonel\\onedrive\\documentos\\app asp.net\\carrito de compras\\capanegocio\\cn_recursos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A740F537-6EC1-40B7-A3AF-44F66083365D}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\cn_recursos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DE1C700-9656-4048-A696-BE6B49770919}|AppWeb\\CapaPresentacionAdmin.csproj|C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\appweb\\views\\home\\usuarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3DE1C700-9656-4048-A696-BE6B49770919}|AppWeb\\CapaPresentacionAdmin.csproj|solutionrelative:appweb\\views\\home\\usuarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3DE1C700-9656-4048-A696-BE6B49770919}|AppWeb\\CapaPresentacionAdmin.csproj|C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\appweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -25,6 +33,23 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CN_Usuarios.cs",
+              "DocumentMoniker": "C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\CapaNegocio\\CN_Usuarios.cs",
+              "RelativeDocumentMoniker": "CapaNegocio\\CN_Usuarios.cs",
+              "ToolTip": "C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\CapaNegocio\\CN_Usuarios.cs",
+              "RelativeToolTip": "CapaNegocio\\CN_Usuarios.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAewB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T21:34:20.111Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "HomeController.cs",
@@ -32,27 +57,39 @@
               "RelativeDocumentMoniker": "AppWeb\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\AppWeb\\Controllers\\HomeController.cs",
               "RelativeToolTip": "AppWeb\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAkwEQAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAhwDgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T00:00:47.298Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "CN_Recursos.cs",
+              "DocumentMoniker": "C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\CapaNegocio\\CN_Recursos.cs",
+              "RelativeDocumentMoniker": "CapaNegocio\\CN_Recursos.cs",
+              "ToolTip": "C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\CapaNegocio\\CN_Recursos.cs",
+              "RelativeToolTip": "CapaNegocio\\CN_Recursos.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAYwD4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T02:05:08.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Usuarios.cshtml",
               "DocumentMoniker": "C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\AppWeb\\Views\\Home\\Usuarios.cshtml",
               "RelativeDocumentMoniker": "AppWeb\\Views\\Home\\Usuarios.cshtml",
               "ToolTip": "C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\AppWeb\\Views\\Home\\Usuarios.cshtml",
               "RelativeToolTip": "AppWeb\\Views\\Home\\Usuarios.cshtml",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAAAOoAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAAOQAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-29T18:59:07.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T18:59:07.968Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Leonel\\OneDrive\\Documentos\\App Asp.net\\Carrito de compras\\AppWeb\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AppWeb\\Views\\Shared\\_Layout.cshtml",
@@ -60,8 +97,7 @@
               "RelativeToolTip": "AppWeb\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-28T00:32:17.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-28T00:32:17.956Z"
             }
           ]
         }
