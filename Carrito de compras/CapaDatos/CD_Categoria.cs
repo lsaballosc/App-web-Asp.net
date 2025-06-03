@@ -25,7 +25,7 @@ namespace CapaDatos
 
                 {
                     //hago un Query
-                    string query = "select idCategoria, Descripcion, Activo from USUARIO"; // Este es el query que se ejecutará para obtener los usuarios
+                    string query = "select idCategoria, Descripcion, Activo from Categoria"; // Este es el query que se ejecutará para obtener los usuarios
 
 
                     // hago un comando SQL con la conexión y el query
@@ -112,7 +112,8 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conection.cn)) // Uso la conexión definida en la clase Conection
                 {
                     SqlCommand comando = new SqlCommand("sp_EditarCategoria", oconexion); // Creo un comando SQL para llamar al procedimiento almacenado 'sp_EditarUsuario'
-                    comando.Parameters.AddWithValue("idCategoria", obj.idCategoria);// ID del usuario a edita
+                    comando.Parameters.AddWithValue("idCategoria", obj.idCategoria);// ID de la categoria
+                    comando.Parameters.AddWithValue("Descripcion", obj.Descripcion);// Descripción de la categoría, que se almacenará en la base de datos
                     comando.Parameters.AddWithValue("Activo", obj.Activo);// Indico si el usuario está activo o no
                     comando.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;// Indico que este parámetro es de salida y será un entero
                     comando.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;// Indico que este parámetro es de salida y será un string de hasta 500 caracteres
@@ -120,7 +121,8 @@ namespace CapaDatos
                     oconexion.Open(); // Abro la conexión a la base de datos
                     comando.ExecuteNonQuery(); // Ejecuto el comando
                     Mensaje = comando.Parameters["Mensaje"].Value.ToString(); // Obtengo el mensaje de error si lo hay
-                    respuesta = true; // Si todo sale bien, indico que la edición fue exitosa
+                    int resultado = Convert.ToInt32(comando.Parameters["Resultado"].Value); 
+                    respuesta = resultado ==1; // Si todo sale bien, indico que la edición fue exitosa
                 }
             }
             catch (Exception ex)

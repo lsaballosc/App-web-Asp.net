@@ -5,8 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CapaEntidad;
-using CapaNegocio;
+
 
 namespace AppWeb.Controllers
 {
@@ -27,7 +26,8 @@ namespace AppWeb.Controllers
         {
             return View();
         }
-
+        // Categorías
+        #region CATEGORIAS
         [HttpGet]
         public JsonResult ListarCategorias()
         {
@@ -68,7 +68,7 @@ namespace AppWeb.Controllers
 
 
         [HttpPost]
-        public JsonResult EliminarUsuario(int id)
+        public JsonResult EliminarCategoria(int id)
         {
             // hago 2 variables para el resultado y el mensaje
             string mensaje = string.Empty;
@@ -79,5 +79,61 @@ namespace AppWeb.Controllers
             // Retorno un JsonResult con el resultado de la operacion
             return Json(new { resultado = respuesta, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
         }
+        #endregion
+        // Marcas
+
+        #region MARCAS
+        public JsonResult ListarMarca()
+        {
+            // Creo un objeto de la capa de Entidad para acceder a los metodos de la capa de negocio
+            List<Marca> olista = new List<Marca>();
+            olista = new CN_Marca().Listar();
+
+            // Retorno un JsonResult con la lista de usuarios
+            return Json(new { data = olista }, JsonRequestBehavior.AllowGet);
+
+        }
+
+
+        [HttpPost]
+
+        public JsonResult GuardarMarca(Marca obj)
+        {
+            object resultado;
+            string mensaje = string.Empty;
+
+            if (obj.IdMarca == 0)
+            {
+                // Si el IdCategoria es 0, significa que es un nuevo usuario
+                resultado = new CN_Marca().Registrar(obj, out mensaje);
+            }
+            else
+            {
+                // Si el IdUsuario es mayor a 0, significa que es un usuario existente
+                resultado = new CN_Marca().Editar(obj, out mensaje);
+            }
+
+            // Retorno un JsonResult con el resultado de la operacion
+            return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
+
+        }
+
+
+
+
+        [HttpPost]
+        public JsonResult EliminarMarca(int id)
+        {
+            // hago 2 variables para el resultado y el mensaje
+            string mensaje = string.Empty;
+
+            bool respuesta = false;
+
+            respuesta = new CN_Marca().Eliminar(id, out mensaje);
+            // Retorno un JsonResult con el resultado de la operacion
+            return Json(new { resultado = respuesta, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
     }
 }

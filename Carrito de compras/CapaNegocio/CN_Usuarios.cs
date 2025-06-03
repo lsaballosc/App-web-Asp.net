@@ -65,7 +65,7 @@ namespace CapaNegocio
                 }
                 else
                 {
-                                       Mensaje = "Error al enviar el correo con la clave generada. Por favor, inténtelo de nuevo."; // Mensaje de error si no se pudo enviar el correo
+                    Mensaje = "Error al enviar el correo con la clave generada. Por favor, inténtelo de nuevo."; // Mensaje de error si no se pudo enviar el correo
                     return 0; // Retorno 0 si no se pudo enviar el correo
                 }
                     
