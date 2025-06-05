@@ -46,7 +46,7 @@ namespace CapaNegocio
         }
 
 
-        public static bool EnviarCorreo(string correo,string asunto, string mensaje)
+        public static bool EnviarCorreo(string correo, string asunto, string mensaje)
         {
 
             bool resultado = false; // Variable para almacenar el resultado del envío de correo
@@ -66,8 +66,8 @@ namespace CapaNegocio
                     Credentials = new NetworkCredential("jzelacrochet@gmail.com", "mshigfbajjrvtpwr"), // configurar las credenciales del servidor SMTP de Gmail
                     // Configurar las credenciales del servidor SMTP de Gmail
                     Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true // Habilitar SSL para el envío seguro de correos
+                    Port = 587,
+                    EnableSsl = true // Habilitar SSL para el envío seguro de correos
 
                 };// Configurar el servidor SMTP de Gmail, se encarga // de enviar el correo
 
@@ -82,5 +82,25 @@ namespace CapaNegocio
             return resultado; // Retornar el resultado del envío de correo
         }
 
+
+
+
+        public static string ConvertirBase64(string ruta, out bool conversion)
+        {
+            string textoBase64 = string.Empty; // Inicializar la variable para almacenar el texto en Base64
+            conversion = true; // Inicializar la variable de conversión como verdadera
+
+
+            try
+            {
+                byte[] bytes = File.ReadAllBytes(ruta); // Leer todos los bytes del archivo en la ruta especificada
+                textoBase64 = Convert.ToBase64String(bytes); // Convertir los bytes a una cadena en Base64
+            }
+            catch (Exception ex)
+            {
+                conversion = false; // Si ocurre una excepción, establecer la conversión como falsa
+            }
+            return textoBase64; // Retornar la cadena en Base64
+        }
     }
 }

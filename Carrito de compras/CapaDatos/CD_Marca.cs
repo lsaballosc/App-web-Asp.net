@@ -149,6 +149,7 @@ namespace CapaDatos
                     oconexion.Open(); // Abro la conexión a la base de datos
                     comando.ExecuteNonQuery(); // Ejecuto el comando
                     Mensaje = comando.Parameters["Mensaje"].Value.ToString(); // Obtengo el mensaje de error si lo hay
+
                     respuesta = true; // Si todo sale bien, indico que la edición fue exitosa
                 }
             }

@@ -25,57 +25,71 @@ namespace CapaNegocio
 
         public int Registrar(Usuario obj, out string Mensaje)
         {
-            //llamo al metodo de la capa de datos que me devuelve el id generado y un mensaje de error si ocurre
+            Mensaje = string.Empty;
 
-            Mensaje = string.Empty; // Inicializo el mensaje como vacío
             // Validar campos obligatorios
-            if (string.IsNullOrEmpty(obj.Nombres) || string.IsNullOrWhiteSpace(obj.Nombres ))
+            if (string.IsNullOrWhiteSpace(obj.Nombres) ||
+                string.IsNullOrWhiteSpace(obj.Apellidos) ||
+                string.IsNullOrWhiteSpace(obj.Correo))
             {
                 Mensaje = "Los campos Nombres, Apellidos, Correo y Clave son obligatorios.";
-               
-            }else if (string.IsNullOrEmpty(obj.Apellidos) || string.IsNullOrWhiteSpace(obj.Apellidos))
-            {
-                Mensaje = "Los campos Nombres, Apellidos, Correo y Clave son obligatorios.";
-                
-                }
-            else if (string.IsNullOrEmpty(obj.Correo) || string.IsNullOrWhiteSpace(obj.Correo))
-            {
-                Mensaje = "Los campos Nombres, Apellidos, Correo y Clave son obligatorios.";
-               
+                return 0;
             }
-            //si el mensaje esta vacio, significa que no hay errores en los campos obligatorios
+
+            // 1. Generar la clave temporal
+            string claveTemporal = CN_Recursos.GenerarClave();
+
+            // 2. Encriptar la clave temporal y asignarla al objeto
+            obj.Clave = CN_Recursos.EncriptarSHA256(claveTemporal);
+
+            // 3. Intentar registrar el usuario en la base de datos
+            int idGenerado = objCdUsuario.Registrar(obj, out Mensaje);
+
+            // 4. Solo si se registró con éxito (id > 0), enviar el correo
             if (string.IsNullOrEmpty(Mensaje))
             {
-
-                // MODIFICO Y AHORA GENERO UNA CLAVE ALEATORIA PARA EL USUARIO
-                string clave = CN_Recursos.GenerarClave();
-
-                string asunto = "Creación de Cuenta"; // Asunto del correo
-                string mensaje = $"<h1>Bienvenido a nuestro sistema</h1><p>Su cuenta ha sido creada exitosamente.</p><p>Su clave de acceso es: <strong>{clave}</strong></p>"; // Cuerpo del correo con la clave generada
-
-                // Envio el correo al usuario con la clave generada
-
-                bool respuesta = CN_Recursos.EnviarCorreo(obj.Correo, asunto, mensaje); // Llamo al método para enviar el correo con la clave generada
-
-                // Verifico si el correo se envió correctamente
-
-                if (respuesta) {
-                    obj.Clave = CN_Recursos.EncriptarSHA256(clave);// Encripto la clave generada con SHA256 antes de guardarla en la base de datos
-                    return objCdUsuario.Registrar(obj, out Mensaje); // Llamo al método de la capa de datos para registrar el usuario 
-                }
-                else
+                if (idGenerado > 0)
                 {
-                    Mensaje = "Error al enviar el correo con la clave generada. Por favor, inténtelo de nuevo."; // Mensaje de error si no se pudo enviar el correo
-                    return 0; // Retorno 0 si no se pudo enviar el correo
-                }
-                    
+                    string asunto = "Creación de Cuenta";
+                    // string cuerpo = $"<h1>Bienvenido a nuestro sistema </h1><p>Su cuenta ha sido creada exitosamente {obj.Nombres} </p><p>Su clave de acceso es: <strong>{claveTemporal}</strong></p>";
+                    string cuerpo = $@"
+    <div style='font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;'>
+        <div style='max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;'>
+            <div style='background-color: #2E86C1; color: white; padding: 20px; text-align: center;'>
+                <h1 style='margin: 0;'>¡Bienvenido, {obj.Nombres} {obj.Apellidos}!</h1>
+            </div>
+            <div style='padding: 30px;'>
+                <p style='font-size: 16px;'>Nos complace darte la bienvenida a nuestro sistema.</p>
+                <p style='font-size: 16px;'>Tu cuenta ha sido creada exitosamente.</p>
+                <p style='font-size: 16px;'>Tu clave de acceso es:</p>
+                <p style='font-size: 18px; font-weight: bold; color: #2E86C1;'>{claveTemporal}</p>
+                <hr style='margin: 30px 0;'>
+                <p style='font-size: 14px; color: #777;'>Por seguridad, deberás cambiar la clave una vez que ingreses al sistema.</p>
+            </div>
+            <div style='background-color: #f0f0f0; padding: 15px; text-align: center; font-size: 12px; color: #888;'>
+                © 2025 JzelaCrochet. Todos los derechos reservados.
+            </div>
+        </div>
+    </div>";
 
-                  
+
+
+                    bool enviado = CN_Recursos.EnviarCorreo(obj.Correo, asunto, cuerpo);
+
+                    if (!enviado)
+                    {
+                        Mensaje = "No se puede ingresar el usuario porque el correo ya existe .";
+                    }
+                }
             }
-            else {
-                return 0; }// Retorno 0 si hay un mensaje de error, indicando que no se pudo registrar
-                                             
+               
+
+            // Retorna 0 si no se registró, o el ID generado si todo está bien
+            return idGenerado;
         }
+
+
+    
 
 
         // Metodo para actualizar un usuario

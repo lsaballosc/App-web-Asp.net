@@ -67,6 +67,8 @@ namespace CapaDatos
             return lista;
         }
 
+        //metodo para ver si existe un correo en la base de datos
+     
 
 
         // Método para registrar un usuario

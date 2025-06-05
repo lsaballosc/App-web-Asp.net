@@ -35,9 +35,12 @@ namespace CapaEntidad
         public String NombreImagen { get; set; }
 
         public bool Activo { get; set; }
+        public string Descripcion { get; set; }
 
-
-
-
+        // para guardar con decimal
+        public string PrecioTexto { get; set; }
+        //para guardar la base 64 de la imagen y su extension
+        public string Base64 { get; set; }
+        public string Extension { get; set; }
     }
 }
