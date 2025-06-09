@@ -23,7 +23,7 @@ namespace CapaDatos
 
                 {
                     //hago un Query
-                    string query = "select IdMarca, Descripcion, Activo from Marca"; // Este es el query que se ejecutará para obtener los usuarios
+                    string query = "select IdMarca, Descripcion, Activo from MARCA"; // Este es el query que se ejecutará para obtener los usuarios
 
 
                     // hago un comando SQL con la conexión y el query

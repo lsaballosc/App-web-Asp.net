@@ -74,5 +74,15 @@ namespace AppWeb.Controllers
             return Json(new { resultado = respuesta, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
+        public JsonResult VistaDashboard()
+        {
+            // Retorno un JsonResult con la vista del dashboard
+            CN_DashBoard oDashBoard = new CN_DashBoard();
+
+            oDashBoard.VerDashboard();
+
+            return Json(new { resultado = oDashBoard }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

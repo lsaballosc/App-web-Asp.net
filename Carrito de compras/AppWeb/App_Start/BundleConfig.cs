@@ -18,6 +18,7 @@ namespace AppWeb
                       "~/Scripts/DataTables/dataTables.responsive.js",
                       "~/Scripts/loadingoverlay/loadingoverlay.min.js",
                       "~/Scripts/sweetalert.min.js",
+                      "~/Scripts/jquery.validate.js",
                       "~/Scripts/scripts.js"));
 
             // Utilice la versión de desarrollo de Modernizr para desarrollar y obtener información sobre los formularios.  De esta manera estará

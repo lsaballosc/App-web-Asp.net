@@ -29,11 +29,11 @@ namespace CapaDatos
                 {
                     StringBuilder sb = new StringBuilder();
                     sb.AppendLine(" select p.IdProducto,p.Nombre,p.Descripcion,");
-                    sb.AppendLine("m.IdProducto, m.Descripcion[DescProducto],");
+                    sb.AppendLine("m.IdMarca, m.Descripcion[DesMarca],");
                     sb.AppendLine("c.idCategoria,c.Descripcion[DesCategoria],");
                     sb.AppendLine("p.Precio,p.Stock,p.RutaImagen,p.NombreImagen,p.Activo");
                     sb.AppendLine("from PRODUCTO p");
-                    sb.AppendLine("inner join Producto m on m.IdProducto = p.IdProducto");
+                    sb.AppendLine("inner join MARCA m on m.IdMarca = p.IdMarca");
                     sb.AppendLine("inner join Categoria c on c.idCategoria = p.IdCategoria");
 
                    
@@ -59,8 +59,8 @@ namespace CapaDatos
                                 Nombre = reader["Nombre"].ToString(),
                                 Descripcion= reader["Descripcion"].ToString(),
                                 Activo = Convert.ToBoolean(reader["Activo"]),
-                                oMarca = new Marca() { IdMarca = Convert.ToInt32(reader["IdProducto"]),
-                                    Descripcion = reader["DescProducto"].ToString(),
+                                oMarca = new Marca() { IdMarca = Convert.ToInt32(reader["IdMarca"]),
+                                    Descripcion = reader["DesMarca"].ToString(),
                                 },
                                 oCategoria = new Categoria() { idCategoria = Convert.ToInt32(reader["idCategoria"]),
                                     Descripcion = reader["DesCategoria"].ToString(),

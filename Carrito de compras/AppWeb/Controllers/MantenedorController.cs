@@ -177,7 +177,9 @@ namespace AppWeb.Controllers
             }
             else
             {
-                return Json(new { operacionExitosa = false, mensaje = "El formato del precio debe ser ##.## o ####.##,#" }, JsonRequestBehavior.AllowGet);
+               // operacion_Exitosa = false;
+                //mensaje = "No se ha podido ingresar debido a que el precio no está en el formato correcto";
+               return Json(new { operacionExitosa = false, mensaje = "El formato del precio debe ser ##.## o ####.##,#" }, JsonRequestBehavior.AllowGet);
             }
             if (oProducto.IdProducto == 0)
             {
