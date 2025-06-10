@@ -175,5 +175,68 @@ namespace CapaDatos
             return respuesta; // Retorno true si la eliminación fue exitosa, false si hubo un error
 
         }// fin del método Eliminar
+
+
+        // Método para cambiar la clave de un usuario
+        public bool CambiarClave(int idUsuario,string nuevaclave ,out string Mensaje)
+        {
+            bool respuesta = false; // Variable para indicar si la eliminación fue exitosa
+            Mensaje = string.Empty; // Inicializo el mensaje como vacío
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conection.cn)) // Uso la conexión definida en la clase Conection
+                {
+                    SqlCommand comando = new SqlCommand("update usuario set clave = @nuevaclave, reestablecer = 0 where idusuario =@idUsuario", oconexion); // Creo un comando SQL para eliminar un usuario por su ID
+                    comando.Parameters.AddWithValue("@idUsuario", idUsuario);
+                    comando.Parameters.AddWithValue("@nuevaclave", nuevaclave);// agrego los parámetros necesarios para la consulta
+                    comando.CommandType = CommandType.Text; // Indico que es un comando de tipo texto
+                    oconexion.Open(); // Abro la conexión a la base de datos
+
+                    respuesta = comando.ExecuteNonQuery() > 0 ? true : false; // Ejecuto el comando y verifico si se eliminó al menos un registro, asignando true o false a la variable respuesta
+                }
+            }
+            catch (Exception ex)
+            {
+                // Si ocurre un error, capturo la excepción y asigno el mensaje de error
+                respuesta = false; // Si hay un error, la respuesta será falsa
+                Mensaje = ex.Message;// Asigno el mensaje de error a la variable Mensaje
+            }
+            return respuesta; // Retorno true si la eliminación fue exitosa, false si hubo un error
+
+        }
+
+        public bool ReestablecerClave(int idUsuario, string clave, out string Mensaje)
+        {
+            bool respuesta = false; // Variable para indicar si la eliminación fue exitosa
+            Mensaje = string.Empty; // Inicializo el mensaje como vacío
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(Conection.cn)) // Uso la conexión definida en la clase Conection
+                {// como va a reestablecer la clave, no se va a eliminar el usuario, solo se va a actualizar la clave y se va a poner reestablecer en 1
+                    SqlCommand comando = new SqlCommand("update usuario set clave = @clave, reestablecer = 1 where idusuario = @idUsuario", oconexion); // Creo un comando SQL para eliminar un usuario por su ID
+                    comando.Parameters.AddWithValue("@idUsuario", idUsuario);
+                    comando.Parameters.AddWithValue("@clave", clave);// Agrego el parámetro del ID del usuario a eliminar
+                    comando.CommandType = CommandType.Text; // Indico que es un comando de tipo texto
+                    oconexion.Open(); // Abro la conexión a la base de datos
+
+                    respuesta = comando.ExecuteNonQuery() > 0 ? true : false; // Ejecuto el comando y verifico si se eliminó al menos un registro, asignando true o false a la variable respuesta
+                }
+            }
+            catch (Exception ex)
+            {
+                // Si ocurre un error, capturo la excepción y asigno el mensaje de error
+                respuesta = false; // Si hay un error, la respuesta será falsa
+                Mensaje = ex.Message;// Asigno el mensaje de error a la variable Mensaje
+            }
+            return respuesta; // Retorno true si la eliminación fue exitosa, false si hubo un error
+
+        }// fin del método Eliminar
+
+
+
+
+
+
+
     }// fin de la clase CD_Usuarios
 }

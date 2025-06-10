@@ -22,5 +22,12 @@ namespace CapaNegocio
         }
 
 
+        public List<Reporte> Ventas(string fechainicio, string fechafin, string idtransaccion)
+        {
+            //llamo al metodo de la capa de datos que me devuelve una lista de usuarios
+            return objCdDash.Ventas(fechainicio, fechafin, idtransaccion);
+        }
+
+
     }
 }

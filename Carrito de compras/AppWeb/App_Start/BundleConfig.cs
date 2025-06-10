@@ -19,6 +19,7 @@ namespace AppWeb
                       "~/Scripts/loadingoverlay/loadingoverlay.min.js",
                       "~/Scripts/sweetalert.min.js",
                       "~/Scripts/jquery.validate.js",
+                       "~/Scripts/jquery-ui-1.14.1.js",
                       "~/Scripts/scripts.js"));
 
             // Utilice la versión de desarrollo de Modernizr para desarrollar y obtener información sobre los formularios.  De esta manera estará
@@ -32,7 +33,8 @@ namespace AppWeb
             bundles.Add(new StyleBundle("~/Content/css").Include( "~/Content/site.css",
                  "~/Content/DataTables/css/jquery.dataTables.css",
                   "~/Content/DataTables/css/responsive.dataTables.css",
-                  "~/Content/sweetalert.css"
+                  "~/Content/sweetalert.css",
+                  "~/Content/themes/base/jquery-ui.css"
 
                 ));
 
