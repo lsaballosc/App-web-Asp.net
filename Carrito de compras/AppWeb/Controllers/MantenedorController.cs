@@ -13,6 +13,7 @@ using System.Web.Mvc;
 
 namespace AppWeb.Controllers
 {
+    [Authorize]
     public class MantenedorController : Controller
     {
         // GET: Mantenedor

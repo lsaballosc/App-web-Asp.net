@@ -11,6 +11,7 @@ using System.IO;
 
 namespace AppWeb.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
