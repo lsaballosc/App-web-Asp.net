@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -16,13 +17,16 @@ namespace CapaEntidad
     //FechaRegistro
     public class Cliente
     {
+        public string Nombres { get; set; }
         public int IdCliente { get; set; }
-        public string Apelllidos { get; set; }
-        public int MyProperty { get; set; }
+        public string Apellidos { get; set; }
+        public string Clave { get; set; }
 
         public string Correo { get; set; }
 
-        public string Reestablecer{ get; set; }
+        public bool Reestablecer{ get; set; }
+
+        public string ConfirmarClave { get; set; }
 
     }
 }

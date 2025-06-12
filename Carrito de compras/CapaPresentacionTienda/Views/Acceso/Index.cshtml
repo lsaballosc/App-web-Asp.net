@@ -1,4 +1,4 @@
-﻿﻿
+﻿
 @{
     Layout = null;
 }
@@ -7,9 +7,9 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
     <title>Index</title>
-    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet"/>
 </head>
 <body class="bg-primary">
     <div id="layoutAuthentication">
@@ -23,15 +23,13 @@
                                 <div class="card-body">
                                     <form action="@Url.Action("Index","Acceso")" method="post">
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" name="correo" type="email" />
-                                            <label for="inputEmail">Email</label>
+                                            <input class="form-control" name="correo" type="email" autocomplete="off" placeholder="test@gmail.com" />
+                                            <label for="inputEmail">Email </label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" name="clave" type="password" />
+                                            <input class="form-control" name="clave" type="password" autocomplete="off" placeholder="123" />
                                             <label for="inputPassword">Contraseña</label>
                                         </div>
-
-
                                         @{
                                             if (ViewBag.Error != null)
                                             {
@@ -43,17 +41,14 @@
 
                                             }
                                         }
-
-
-
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="@Url.Action("Reestablecer","Acceso")">¿Has olvidado la contraseña?</a>
-                                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                                            <a class="small" href="@Url.Action("Reestablecer","Acceso")">¿Has olvidado tu contraseña?</a>
+                                            <button class="btn btn-primary" type="submit">Ingresar</button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-
+                                    <div class="small"><a href="@Url.Action("Registrar","Acceso")">No tienes una cuenta? Registrate!</a></div>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +60,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; JzelaCrochet</div>
+                        <div class="text-muted">Copyright &copy; Jzlacrochet 2025</div>
                         <div>
                             <a href="#">Privacy Policy</a>
                             &middot;

@@ -51,6 +51,8 @@ C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentac
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\roslyn\VBCSCompiler.exe
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\Antlr3.Runtime.dll
+C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\CapaEntidad.dll
+C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\CapaNegocio.dll
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\Newtonsoft.Json.dll
@@ -62,6 +64,9 @@ C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentac
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\System.Web.WebPages.dll
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\System.Web.WebPages.Razor.dll
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\WebGrease.dll
+C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\CapaDatos.dll
+C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\CapaEntidad.pdb
+C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\CapaNegocio.pdb
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\System.Web.Helpers.xml
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\System.Web.Mvc.xml
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\System.Web.Optimization.xml
@@ -72,6 +77,7 @@ C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentac
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\Newtonsoft.Json.xml
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\Antlr3.Runtime.pdb
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\CapaDatos.pdb
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\es\System.Web.Helpers.resources.dll
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\es\System.Web.Mvc.resources.dll
 C:\Users\Leonel\OneDrive\Documentos\App Asp.net\Carrito de compras\CapaPresentacionTienda\bin\es\System.Web.Optimization.resources.dll
