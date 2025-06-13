@@ -86,6 +86,10 @@ namespace CapaNegocio
             return objMarca.Eliminar(idCategoria, out Mensaje); // Llamo al método de la capa de datos para eliminar el usuario y obtengo el mensaje de error si ocurre
         }
 
+        public List<Marca> ListarMarcaporCategoria(int idcategoria)
+        {
+            return objMarca.ListarMarcaporCategoria(idcategoria);
+        }
 
     }
 }

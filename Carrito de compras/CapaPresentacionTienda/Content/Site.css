@@ -2544,14 +2544,14 @@ textarea.form-control-lg {
     }
 
     .form-check-input:focus {
-        border-color: #86b7fe;
-        outline: 0;
-        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        box-shadow: 0 0 0 0.25rem rgba(217, 142, 130, 0.4);
+        border-color: #D98E82;
+        outline: none;
     }
 
     .form-check-input:checked {
-        background-color: #0d6efd;
-        border-color: #0d6efd;
+        background-color: #f1b5a6;
+        border-color: #D98E82;
     }
 
         .form-check-input:checked[type=checkbox] {
@@ -12865,4 +12865,114 @@ body {
     width: 20px !important;
     font-size: 0.75rem;
     border-radius: 0.375rem !important;
+}
+.bg-beige {
+    background-color: #f5f0e6 !important;
+}
+
+.bg-terracota {
+    background-color: #D98E82 !important;
+}
+
+.text-terracota {
+    color: #D98E82 !important;
+}
+
+
+
+.bg-terracota-soft {
+    background-color: #f1b5a6; /* Terracota suave intermedio */
+}
+/* Efecto al pasar el mouse sobre las tarjetas de pasos */
+.card-step {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    /* sombra inicial */
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+}
+
+    .card-step:hover {
+        background-color: #f7d9d0 !important; /* terracota soft */
+        color: #000 !important;
+        /* subir un poco y sombra más grande */
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgb(0 0 0 / 0.2);
+    }
+
+        /* Ícono en negro al hacer hover */
+        .card-step:hover i {
+            color: #000 !important;
+        }
+
+        /* Títulos y párrafos en negro al hacer hover */
+        .card-step:hover h5,
+        .card-step:hover p {
+            color: #000 !important;
+        }
+
+
+/* Fondo degradado suave solo para sección de productos */
+/* Efecto hover para tarjetas de producto */
+.card-product {
+    background-color: #ffffff; /* Fondo blanco por defecto */
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Relieve suave por defecto */
+    border: 1px solid #eee; /* Borde sutil */
+}
+
+    .card-product:hover {
+        background-color: #f5d7c4 !important; /* Terracota suave */
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Elevación */
+    }
+
+    /* Asegura que el footer no tenga fondo distinto */
+    .card-product .card-product-footer {
+        background-color: transparent !important;
+    }
+
+    /* Transiciones suaves para todos los botones */
+    .card-product .btn {
+        transition: all 0.3s ease;
+    }
+
+    /* Hover personalizado solo para .btn-terracota */
+    .card-product .btn-terracota:hover {
+        background-color: #D98E82 !important;
+        color: black !important;
+        border-color: #f1b5a6 !important;
+    }
+
+/* Estilo base para botón terracota */
+.btn-terracota {
+    color: black;
+    background: #f1b5a6;
+    border: none;
+    font-weight: bold;
+}
+
+/* Estilo base para botón de carrito */
+.card-product .btn-success {
+    background-color: #28a745; /* Verde base más moderno */
+    color: white;
+    border: none;
+}
+
+    /* Hover para botón de carrito */
+    .card-product .btn-success:hover {
+        background-color: #218838 !important; /* Verde más bonito al hacer hover */
+        color: white !important;
+        border-color: #1e7e34 !important;
+    }
+
+.card {
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta 5px */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más visible */
 }

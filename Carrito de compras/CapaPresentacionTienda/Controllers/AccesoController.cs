@@ -174,6 +174,7 @@ namespace CapaPresentacionTienda.Controllers
         }
         public ActionResult CerrarSesion()
         {
+            Session["Cliente"] = null; // Limpiar la sesión del cliente
             FormsAuthentication.SignOut();
             return RedirectToAction("Index"); // Redirigir a la página de inicio de sesión
         }

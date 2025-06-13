@@ -1,11 +1,13 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaEntidad;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 namespace CapaDatos
 {
     public class CD_Marca
@@ -162,5 +164,67 @@ namespace CapaDatos
             return respuesta; // Retorno true si la edición fue exitosa, false si hubo un error
         }// fin del método
 
+
+
+
+        public List<Marca> ListarMarcaporCategoria(int idcategoria)
+        {
+            List<Marca> lista = new List<Marca>();
+
+
+            try
+            {
+                //La cadena de conexión se obtiene desde la clase Conection, en la propiedad cn que obtiene la conexión
+                using (SqlConnection oconexion = new SqlConnection(Conection.cn)) // Uso la conexión definida en la clase Conection
+
+                {
+                    //hago un Query
+                   StringBuilder stringBuilder = new StringBuilder();
+
+                    
+                    //
+                    //
+                    //
+
+                    stringBuilder.AppendLine("select distinct m.IdMarca, m.Descripcion from PRODUCTO p");
+                    stringBuilder.AppendLine("inner join Categoria c on c.idCategoria = p.IdCategoria");
+                    stringBuilder.AppendLine("inner join MARCA m on m.IdMarca = p.IdMarca and m.Activo = 1");
+                    stringBuilder.AppendLine("where c.idCategoria = iif(@idcategoria = 0, c.idCategoria, @idcategoria)");
+
+                    // hago un comando SQL con la conexión y el query
+                    SqlCommand cmd = new SqlCommand(stringBuilder.ToString(), oconexion);
+                    cmd.Parameters.AddWithValue("@idcategoria", idcategoria);
+                    //le digo que tipo de comando es, en este caso es tipo texto
+                    cmd.CommandType = CommandType.Text;
+
+                    // Abro la conexión
+                    oconexion.Open();
+                    // Aqui leemos todos los resultados de la ejecucion del Query
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        //Mientras este leyendo, almacena en la lista que hice
+                        while (reader.Read())
+                        {
+                            lista.Add(new Marca() // Aquí creo un nuevo objeto Usuario y lo lleno con los datos del reader
+                            {
+                                // Asigno los valores del reader a las propiedades del objeto Usuario
+                                IdMarca = Convert.ToInt32(reader["IdMarca"]),
+                                Descripcion = reader["Descripcion"].ToString(),
+                            
+
+                            });
+
+                        }
+                    }
+                }
+            }
+            // Si ocurre un error, lo capturo y no hago nada, solo retorno la lista vacía
+            catch
+            {
+                lista = new List<Marca>();
+
+            }
+            return lista;
+        }//
     }
-}
+}//
